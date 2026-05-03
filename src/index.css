@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Space Grotesk", "Montserrat", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Space Grotesk", ui-monospace, SFMono-Regular, monospace;
+  
+  --color-primary-cyan: #00D2FF;
+  --color-secondary-indigo: #5E6AD2;
+  --color-dark-navy: #0B1117;
+  --color-text-light: #F3F4F6;
+  --color-text-muted: #9CA3AF;
+  --color-dark-card: #161B22;
+  --color-dark-border: #30363D;
+}
+
+@layer base {
+  body {
+    @apply bg-dark-navy text-text-light font-sans selection:bg-primary-cyan/30 selection:text-white;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-6 py-3 bg-primary-cyan text-black font-bold rounded-lg flex items-center gap-2 hover:bg-white transition-all transform hover:scale-105 active:scale-95;
+  }
+
+  .btn-secondary {
+    @apply px-6 py-3 border border-text-light text-text-light font-bold rounded-lg flex items-center gap-2 hover:bg-white hover:text-black transition-all transform hover:scale-105 active:scale-95;
+  }
+
+  .badge-pill {
+    @apply px-4 py-1.5 border border-dark-border rounded-full text-xs font-medium text-text-muted hover:border-primary-cyan hover:text-primary-cyan transition-colors duration-300;
+  }
+
+  .glass-card {
+    @apply bg-dark-card/60 backdrop-blur-xl border border-dark-border;
+  }
+}
+
+/* Custom Utilities */
+.neon-glow {
+  box-shadow: 0 0 20px rgba(0, 210, 255, 0.3);
+}
+
+.text-neon {
+  text-shadow: 0 0 10px rgba(0, 210, 255, 0.5);
+}
