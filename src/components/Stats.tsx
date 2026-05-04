@@ -9,20 +9,20 @@ export default function Stats() {
   ];
 
   return (
-    <section className="bg-primary-cyan py-12 px-6">
+    <section className="bg-primary-cyan/30 py-16 px-6 border-y border-dark-border backdrop-blur-sm">
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-12 text-center">
           {stats.map((stat, i) => (
             <motion.div
-              key={i}
+              key={stat.label}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="text-center md:text-left"
+              className="flex flex-col items-center"
             >
-              <h2 className="text-5xl font-extrabold text-black mb-2">{stat.value}</h2>
-              <p className="text-sm font-bold text-black/70 tracking-widest uppercase">{stat.label}</p>
+              <h2 className="text-4xl md:text-5xl font-black text-white mb-2 tracking-tighter">{stat.value}</h2>
+              <p className="text-[10px] font-bold text-text-muted tracking-[0.2em] uppercase leading-tight text-center">{stat.label}</p>
             </motion.div>
           ))}
         </div>

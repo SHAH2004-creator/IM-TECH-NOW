@@ -24,16 +24,16 @@ export default function Navbar() {
     <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-dark-navy/90 backdrop-blur-md border-b border-dark-border py-4' : 'bg-transparent py-6'}`}>
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         <a href="#" className="flex items-center gap-1 group">
-          <span className="text-2xl font-bold tracking-tighter text-white">IMTECH<span className="text-primary-cyan">NOW</span></span>
+          <span className="text-2xl font-black tracking-tighter text-white uppercase">IMTECH<span className="text-primary-cyan">NOW</span></span>
         </a>
 
         {/* Desktop Nav */}
-        <div className="hidden lg:flex items-center gap-8">
+        <div className="hidden lg:flex items-center gap-10">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
-              className="text-sm font-medium text-text-light hover:text-primary-cyan transition-colors"
+              className="text-[13px] font-semibold uppercase tracking-widest text-text-light/80 hover:text-primary-cyan transition-colors"
             >
               {link.name}
             </a>
@@ -41,8 +41,8 @@ export default function Navbar() {
         </div>
 
         <div className="hidden lg:block">
-          <button className="px-6 py-2 bg-primary-cyan text-black font-bold rounded flex items-center gap-2 hover:bg-white transition-all transform hover:scale-105">
-            <span>Free Quote</span>
+          <button className="px-6 py-3 bg-primary-cyan text-dark-navy font-bold rounded flex items-center gap-2 hover:bg-white transition-all transform hover:scale-105">
+            <span className="text-sm uppercase tracking-wide">Free Quote</span>
             <ArrowRight className="w-4 h-4" />
           </button>
         </div>

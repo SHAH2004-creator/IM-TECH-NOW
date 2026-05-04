@@ -20,16 +20,12 @@ export default function Portfolio() {
   return (
     <section id="portfolio" className="py-24 px-6 bg-dark-navy">
       <div className="max-w-7xl mx-auto">
-        <motion.div
-           initial={{ opacity: 0, scale: 0.95 }}
-           whileInView={{ opacity: 1, scale: 1 }}
-           viewport={{ once: true }}
-           className="bg-white text-dark-navy p-10 md:p-16 rounded-3xl text-center mb-20"
-        >
-          <h2 className="text-4xl md:text-6xl font-bold tracking-tight">
-            A Strategy Driven Tech <span className="text-primary-cyan italic">Collection</span>
-          </h2>
-        </motion.div>
+        <div className="text-left mb-16">
+           <p className="text-[10px] font-bold text-primary-cyan uppercase tracking-[0.3em] mb-4">Our Work</p>
+           <h2 className="text-4xl md:text-7xl font-black tracking-tighter text-white max-w-3xl leading-[0.9]">
+             A Strategy Driven Tech <span className="text-primary-cyan">Collection</span>
+           </h2>
+        </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
           {/* Left Column - Poster Designs */}

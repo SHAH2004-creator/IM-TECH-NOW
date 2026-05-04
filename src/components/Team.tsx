@@ -20,16 +20,16 @@ const team = [
 
 export default function Team() {
   return (
-    <section id="team" className="py-24 px-6 bg-[#f8f9fa]">
+    <section id="team" className="py-24 px-6 bg-dark-navy">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-20">
+        <div className="text-left mb-20">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="inline-block px-4 py-1 bg-gray-200 rounded mb-4"
+            className="inline-block px-4 py-1 border border-dark-border rounded mb-4"
           >
-            <span className="text-[10px] font-bold uppercase tracking-widest text-gray-500">Our People</span>
+            <span className="text-[10px] font-bold uppercase tracking-widest text-primary-cyan">Our People</span>
           </motion.div>
           
           <motion.h2
@@ -37,7 +37,7 @@ export default function Team() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-4xl md:text-5xl font-bold tracking-tight text-gray-900"
+            className="text-4xl md:text-5xl font-black tracking-tighter text-white"
           >
             Meet Our Team
           </motion.h2>
@@ -49,13 +49,13 @@ export default function Team() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="bg-black rounded-2xl aspect-[4/5] flex flex-col items-center justify-center p-8 text-center"
+            className="bg-dark-card border border-dark-border rounded-2xl aspect-[4/5] flex flex-col items-center justify-center p-8 text-center group hover:border-primary-cyan transition-colors"
           >
-            <div className="w-12 h-12 rounded-full border border-gray-800 flex items-center justify-center mb-4">
-               <span className="text-white text-xl">?</span>
+            <div className="w-12 h-12 rounded-full border border-dark-border flex items-center justify-center mb-4 group-hover:bg-primary-cyan group-hover:text-dark-navy transition-all">
+               <span className="text-white group-hover:text-current text-xl font-bold">?</span>
             </div>
             <h3 className="text-white font-bold mb-2">Join Us</h3>
-            <p className="text-gray-500 text-xs">We're always looking for talents.</p>
+            <p className="text-text-muted text-xs">We're always looking for talents.</p>
           </motion.div>
 
           {team.map((member, index) => (
@@ -67,17 +67,17 @@ export default function Team() {
               transition={{ delay: index * 0.1 + 0.1 }}
               className="group"
             >
-              <div className="relative rounded-2xl overflow-hidden aspect-[4/5] mb-6">
+              <div className="relative rounded-2xl overflow-hidden aspect-[4/5] mb-6 border border-dark-border">
                 <img 
                   src={member.image} 
                   alt={member.name}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 grayscale hover:grayscale-0"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 grayscale group-hover:grayscale-0"
                 />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-1">{member.name}</h3>
+              <h3 className="text-xl font-bold text-white mb-1 tracking-tight">{member.name}</h3>
               <div className="flex items-center gap-3">
-                 <div className="w-8 h-0.5 bg-primary-cyan rounded-full" />
-                 <p className="text-gray-500 text-xs font-bold uppercase tracking-wider">{member.role}</p>
+                 <div className="w-8 h-1 bg-primary-cyan rounded-full" />
+                 <p className="text-text-muted text-[10px] font-bold uppercase tracking-widest">{member.role}</p>
               </div>
             </motion.div>
           ))}

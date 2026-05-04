@@ -25,9 +25,9 @@ export default function Contact() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-4xl md:text-6xl font-bold mb-8 italic"
+              className="text-4xl md:text-7xl font-black mb-8 tracking-tighter leading-none"
             >
-              Let's build the <span className="text-primary-cyan">Future</span>.
+              Let's build the <br /><span className="text-primary-cyan">Future</span> together.
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 30 }}

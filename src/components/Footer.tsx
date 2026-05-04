@@ -5,14 +5,13 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="pt-20 pb-10 px-6 bg-dark-navy text-text-light border-t border-dark-border">
+    <footer className="pt-20 pb-10 px-6 bg-dark-navy text-text-light border-t-2 border-primary-cyan">
       <div className="max-w-7xl mx-auto">
-        {/* Marquee text or top bar if needed like image 7 */}
         <div className="border-b border-dark-border pb-12 mb-12 flex flex-col lg:flex-row gap-12 justify-between items-start">
           <div className="max-w-sm">
-            <h3 className="text-2xl font-bold mb-6">ImTechNow</h3>
-            <p className="text-text-muted leading-relaxed mb-8">
-              We empower businesses through custom software development, intuitive UI/UX design, and robust SaaS solutions tailored for growth.
+            <h3 className="text-2xl font-black mb-6 uppercase tracking-tighter">IMTECH<span className="text-primary-cyan">NOW</span></h3>
+            <p className="text-text-muted text-sm leading-relaxed mb-8">
+              Strategy driven tech solution provider empowering businesses with high-tech software solutions.
             </p>
             <div className="flex gap-4">
                {[Github, Linkedin, Twitter, Instagram, MessageCircle].map((Icon, i) => (
@@ -27,11 +26,11 @@ export default function Footer() {
             <div>
               <h4 className="text-lg font-bold mb-6">Navigation</h4>
               <ul className="space-y-4 text-text-muted">
-                <li><a href="#" className="hover:text-primary-cyan">Home</a></li>
-                <li><a href="#" className="hover:text-primary-cyan">About Us</a></li>
-                <li><a href="#" className="hover:text-primary-cyan border-b border-primary-cyan pb-1">Our Portfolio</a></li>
-                <li><a href="#" className="hover:text-primary-cyan">Our Products</a></li>
-                <li><a href="#" className="hover:text-primary-cyan">FAQs</a></li>
+                <li><a href="#" className="no-underline transition-all hover:text-primary-cyan hover:underline hover:underline-offset-4">Home</a></li>
+                <li><a href="#" className="no-underline transition-all hover:text-primary-cyan hover:underline hover:underline-offset-4">About Us</a></li>
+                <li><a href="#" className="no-underline transition-all hover:text-primary-cyan hover:underline hover:underline-offset-4">Our Portfolio</a></li>
+                <li><a href="#" className="no-underline transition-all hover:text-primary-cyan hover:underline hover:underline-offset-4">Our Products</a></li>
+                <li><a href="#" className="no-underline transition-all hover:text-primary-cyan hover:underline hover:underline-offset-4">FAQs</a></li>
               </ul>
             </div>
             <div>
@@ -68,20 +67,30 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="pt-8 flex flex-col md:flex-row justify-between items-center gap-6">
-          <p className="text-sm text-text-muted">
-            Copyright © {currentYear} ImTechNow | All Rights Reserved.
-          </p>
-          <div className="flex gap-4 text-sm text-text-muted">
-            <a href="#" className="hover:text-white">Privacy Policy</a>
-            <span>|</span>
-            <a href="#" className="hover:text-white">Term of Use</a>
+        <div className="pt-8 flex flex-col xl:flex-row justify-between items-center xl:items-start gap-8">
+          <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8 min-w-fit">
+            <p className="text-sm text-text-muted whitespace-nowrap">
+              Copyright © {currentYear} ImTechNow | All Rights Reserved.
+            </p>
+            <div className="flex gap-4 text-sm text-text-muted">
+              <a href="#" className="no-underline transition-all hover:text-primary-cyan hover:underline hover:underline-offset-4">Privacy Policy</a>
+              <span>|</span>
+              <a href="#" className="no-underline transition-all hover:text-primary-cyan hover:underline hover:underline-offset-4">Term of Use</a>
+            </div>
           </div>
-          <div className="flex flex-wrap gap-2 justify-center">
-             {["Mobile App Development", "Website Development", "SaaS Products", "UI/UX Design", "Graphic Design", "Poster Design"].map(tag => (
-               <span key={tag} className="px-3 py-1 border border-dark-border rounded-full text-[10px] text-text-muted">
-                 {tag}
-               </span>
+          
+          <div className="flex flex-wrap gap-2 justify-center xl:justify-end xl:max-w-xl">
+             {[
+               ["Mobile App Development", "Website Development", "SaaS Products"],
+               ["UI/UX Design", "Graphic Design", "Poster Design"]
+             ].map((group, groupIdx) => (
+               <div key={groupIdx} className="flex flex-wrap gap-2 justify-center xl:justify-end">
+                 {group.map(tag => (
+                   <span key={tag} className="px-3 py-1 border border-dark-border rounded-full text-[10px] text-text-muted whitespace-nowrap hover:border-primary-cyan transition-colors">
+                     {tag}
+                   </span>
+                 ))}
+               </div>
              ))}
           </div>
         </div>

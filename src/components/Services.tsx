@@ -1,90 +1,126 @@
-import { motion } from 'motion/react';
-import { ArrowLeft, ArrowRight, ArrowUpRight } from 'lucide-react';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
+import { ArrowLeft, ArrowRight, Laptop, Smartphone, Palette, Code } from 'lucide-react';
 
-const services = [
+const allServices = [
   {
     title: "Software Development",
     description: "Engineering scalable, high-performance desktop and SaaS solutions tailored to your unique business logic.",
-    image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=800",
+    icon: <Code className="w-6 h-6" />,
     tags: ["Mobile App Design", "Website Design", "Desktop App Design"]
+  },
+  {
+    title: "Digital Strategy",
+    description: "We help brands navigate the digital landscape with data-driven strategies and innovative technology.",
+    icon: <Laptop className="w-6 h-6" />,
+    tags: ["Market Analysis", "Brand Strategy", "Growth"]
   },
   {
     title: "UI/UX Design",
     description: "Crafting intuitive digital interfaces where organic nature-inspired patterns meet modern user-centric design.",
-    image: "https://images.unsplash.com/photo-1586717791821-3f44a563cc4c?auto=format&fit=crop&q=80&w=800",
-    tags: ["User Interface", "User Experience", "Responsive Design"]
+    icon: <Palette className="w-6 h-6" />,
+    tags: ["User Interface", "User Experience", "Responsive"]
+  },
+  {
+    title: "App Development",
+    description: "Building robust mobile applications that offer seamless user experiences across all platforms.",
+    icon: <Smartphone className="w-6 h-6" />,
+    tags: ["iOS", "Android", "Cross-Platform"]
   }
 ];
 
 export default function Services() {
+  const [page, setPage] = useState(0); // 0 for "1-2", 1 for "3-4"
+  const servicesPerPage = 2;
+  const currentServices = allServices.slice(page * servicesPerPage, (page + 1) * servicesPerPage);
+
+  const nextPage = () => {
+    if ((page + 1) * servicesPerPage < allServices.length) {
+      setPage(page + 1);
+    }
+  };
+
+  const prevPage = () => {
+    if (page > 0) {
+      setPage(page - 1);
+    }
+  };
+
   return (
-    <section id="services" className="py-24 px-6 bg-white text-black overflow-hidden">
+    <section id="services" className="py-24 px-6 bg-dark-navy overflow-hidden">
       <div className="max-w-7xl mx-auto">
+        {/* Header Section */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
-          <div>
-            <p className="text-sm font-medium text-gray-500 mb-4">ImTechNow — Services</p>
-            <h2 className="text-4xl md:text-6xl font-bold tracking-tight max-w-2xl">
-              An Innovation Driven Digital Agency
+          <div className="text-left">
+            <p className="text-[10px] font-bold text-text-muted uppercase tracking-[0.3em] mb-4">ImTechNow — Services</p>
+            <h2 className="text-4xl md:text-6xl font-black tracking-tighter text-white max-w-2xl leading-[1.1]">
+              An Innovation Driven <br /> Digital Agency
             </h2>
           </div>
-          <div className="flex items-center gap-4">
-            <button className="px-6 py-2 bg-black text-white rounded font-medium flex items-center gap-2">
+          
+          <div className="flex flex-wrap items-center gap-6">
+            <button className="px-8 py-3 bg-dark-card border border-dark-border text-text-light text-sm font-bold rounded-lg flex items-center gap-2 hover:bg-white hover:text-dark-navy transition-all uppercase tracking-widest whitespace-nowrap">
               View all <ArrowRight className="w-4 h-4" />
             </button>
-            <div className="flex gap-2">
-              <button className="w-10 h-10 border border-gray-200 rounded flex items-center justify-center hover:bg-primary-cyan hover:border-primary-cyan transition-colors">
-                <ArrowLeft className="w-4 h-4" />
+            
+            <div className="flex items-center gap-4">
+              <button 
+                onClick={prevPage}
+                disabled={page === 0}
+                className={`w-12 h-12 rounded-lg border border-dark-border flex items-center justify-center transition-all ${page === 0 ? 'opacity-30 cursor-not-allowed' : 'hover:bg-white hover:text-dark-navy text-white'}`}
+                aria-label="Previous services"
+              >
+                <ArrowLeft className="w-5 h-5" />
               </button>
-              <button className="w-10 h-10 bg-primary-cyan rounded flex items-center justify-center hover:bg-black hover:text-white transition-colors">
-                <ArrowRight className="w-4 h-4" />
+              
+              <span className="text-sm font-bold text-white min-w-[40px] text-center tracking-tighter">
+                {page === 0 ? '1 - 2' : '3 - 4'}
+              </span>
+              
+              <button 
+                onClick={nextPage}
+                disabled={(page + 1) * servicesPerPage >= allServices.length}
+                className={`w-12 h-12 rounded-lg bg-primary-cyan flex items-center justify-center text-dark-navy transition-all ${(page + 1) * servicesPerPage >= allServices.length ? 'opacity-30 cursor-not-allowed' : 'hover:bg-white hover:scale-105'}`}
+                aria-label="Next services"
+              >
+                <ArrowRight className="w-5 h-5" />
               </button>
             </div>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {services.map((service, index) => (
-            <motion.div
-              key={service.title}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              className="group border border-gray-100 rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500"
-            >
-              <div className="relative aspect-[16/10] overflow-hidden">
-                <img 
-                  src={service.image} 
-                  alt={service.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-              </div>
-              <div className="p-10">
-                <h3 className="text-3xl font-bold mb-4">{service.title}</h3>
-                <p className="text-gray-500 mb-8 leading-relaxed">
-                  {service.description}
-                </p>
-                <div className="flex flex-wrap gap-2 mb-8">
+        {/* Cards Grid with Animation */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 min-h-[400px]">
+          <AnimatePresence mode="wait">
+            {currentServices.map((service, index) => (
+              <motion.div
+                key={service.title}
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -20 }}
+                transition={{ duration: 0.3, delay: index * 0.1 }}
+                className="group p-10 bg-dark-card/40 border border-dark-border rounded-2xl hover:border-primary-cyan/50 transition-all duration-500 hover:shadow-2xl hover:shadow-primary-cyan/10 flex flex-col justify-between"
+              >
+                <div>
+                  <div className="w-14 h-14 bg-dark-navy border border-dark-border rounded-xl flex items-center justify-center text-primary-cyan mb-8 group-hover:scale-110 transition-transform">
+                    {service.icon}
+                  </div>
+                  <h3 className="text-3xl font-bold text-white mb-4 group-hover:text-primary-cyan transition-colors">{service.title}</h3>
+                  <p className="text-text-muted mb-10 leading-relaxed text-lg">
+                    {service.description}
+                  </p>
+                </div>
+                
+                <div className="flex flex-wrap gap-3">
                   {service.tags.map(tag => (
-                    <span key={tag} className="px-3 py-1 bg-gray-50 text-[10px] uppercase font-bold text-gray-400 border border-gray-100 rounded-full">
+                    <span key={tag} className="px-4 py-1.5 bg-dark-navy border border-dark-border text-[10px] uppercase font-bold text-primary-cyan/70 tracking-widest rounded-full">
                       {tag}
                     </span>
                   ))}
                 </div>
-                <button className="w-full py-4 bg-dark-navy text-white font-bold rounded-xl flex items-center justify-center gap-2 group-hover:bg-primary-cyan group-hover:text-black transition-colors">
-                  <span>Let's Visit</span>
-                  <ArrowRight className="w-4 h-4" />
-                </button>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-        
-        {/* Pagination Dots */}
-        <div className="flex justify-center gap-2 mt-12">
-          {[1,2,3,4,5].map(i => (
-            <div key={i} className={`w-2 h-2 rounded-full ${i === 1 ? 'bg-primary-cyan w-6' : 'bg-gray-200'}`} />
-          ))}
+              </motion.div>
+            ))}
+          </AnimatePresence>
         </div>
       </div>
     </section>

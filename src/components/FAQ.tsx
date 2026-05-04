@@ -29,25 +29,25 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section className="py-24 px-6 bg-white text-black">
+    <section className="py-24 px-6 bg-dark-navy text-text-light">
       <div className="max-w-7xl mx-auto">
         <div className="mb-12">
-           <div className="flex items-center gap-3 mb-4">
-             <div className="w-8 h-1 bg-dark-navy rounded-full" />
-             <p className="text-sm font-bold text-gray-500 uppercase tracking-wider">Let's Find Answers of Your Valuable Questions</p>
+           <div className="flex items-center gap-3 mb-4 text-left">
+             <div className="w-8 h-1 bg-primary-cyan rounded-full" />
+             <p className="text-[10px] font-bold text-text-muted uppercase tracking-[0.2em]">Let's Find Answers of Your Valuable Questions</p>
            </div>
-           <h2 className="text-4xl md:text-5xl font-bold tracking-tighter">Frequently Asked Questions — FAQs</h2>
+           <h2 className="text-4xl md:text-5xl font-black tracking-tighter text-white text-left">Frequently Asked Questions</h2>
         </div>
 
         <div className="space-y-4">
           {faqs.map((faq, i) => (
-            <div key={i} className="border-b border-gray-200">
+            <div key={i} className="border-b border-dark-border">
               <button
                 onClick={() => setOpenIndex(openIndex === i ? null : i)}
                 className="w-full py-6 flex items-center justify-between text-left group"
               >
-                <span className="text-lg font-bold group-hover:text-primary-cyan transition-colors">{faq.question}</span>
-                <div className={`w-8 h-8 rounded-lg flex items-center justify-center transition-all ${openIndex === i ? 'bg-primary-cyan text-black' : 'bg-gray-100 text-gray-400 group-hover:bg-gray-200'}`}>
+                <span className="text-lg font-bold text-white group-hover:text-primary-cyan transition-colors">{faq.question}</span>
+                <div className={`w-8 h-8 rounded-lg flex items-center justify-center transition-all ${openIndex === i ? 'bg-primary-cyan text-dark-navy' : 'bg-dark-card text-text-muted group-hover:bg-dark-border'}`}>
                   <ChevronDown className={`w-5 h-5 transition-transform duration-300 ${openIndex === i ? 'rotate-180' : ''}`} />
                 </div>
               </button>
@@ -60,7 +60,7 @@ export default function FAQ() {
                     transition={{ duration: 0.3 }}
                     className="overflow-hidden"
                   >
-                    <div className="pb-8 text-gray-600 bg-primary-cyan/10 p-6 rounded-xl mb-4 leading-relaxed">
+                    <div className="pb-8 text-text-muted bg-dark-card border border-dark-border p-6 rounded-xl mb-4 leading-relaxed text-sm">
                       {faq.answer}
                     </div>
                   </motion.div>
