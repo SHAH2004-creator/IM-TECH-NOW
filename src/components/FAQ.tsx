@@ -34,9 +34,9 @@ export default function FAQ() {
         <div className="mb-12">
            <div className="flex items-center gap-3 mb-4 text-left">
              <div className="w-8 h-1 bg-primary-cyan rounded-full" />
-             <p className="text-[10px] font-bold text-text-muted uppercase tracking-[0.2em]">Let's Find Answers of Your Valuable Questions</p>
+             <p className="text-[10px] font-poppins font-bold text-text-muted uppercase tracking-[0.2em]">Let's Find Answers of Your Valuable Questions</p>
            </div>
-           <h2 className="text-4xl md:text-5xl font-black tracking-tighter text-white text-left">Frequently Asked Questions</h2>
+           <h2 className="text-4xl md:text-5xl font-heading font-black tracking-tighter text-white text-left">Frequently Asked Questions</h2>
         </div>
 
         <div className="space-y-4">

@@ -21,8 +21,8 @@ export default function Portfolio() {
     <section id="portfolio" className="py-24 px-6 bg-dark-navy">
       <div className="max-w-7xl mx-auto">
         <div className="text-left mb-16">
-           <p className="text-[10px] font-bold text-primary-cyan uppercase tracking-[0.3em] mb-4">Our Work</p>
-           <h2 className="text-4xl md:text-7xl font-black tracking-tighter text-white max-w-3xl leading-[0.9]">
+           <p className="text-[10px] font-poppins font-bold text-primary-cyan uppercase tracking-[0.3em] mb-4">Our Work</p>
+           <h2 className="text-4xl md:text-7xl font-heading font-black tracking-tighter text-white max-w-3xl leading-[0.9]">
              A Strategy Driven Tech <span className="text-primary-cyan">Collection</span>
            </h2>
         </div>

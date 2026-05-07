@@ -29,21 +29,21 @@ export default function Founder() {
 
           <div>
              <div className="mb-6">
-               <span className="px-4 py-2 border border-dark-border text-primary-cyan text-[10px] font-bold uppercase tracking-[0.3em] rounded">THE FOUNDER</span>
+               <span className="px-4 py-1.5 border border-dark-border text-primary-cyan text-[10px] font-poppins font-bold uppercase tracking-[0.3em] rounded">THE FOUNDER</span>
              </div>
              
-             <h2 className="text-5xl md:text-6xl font-black mb-6 tracking-tighter text-white">Usman Haider</h2>
+             <h2 className="text-5xl md:text-7xl font-heading font-black mb-6 tracking-tighter text-white">Usman Haider</h2>
              
              <div className="flex items-center gap-3 mb-8">
-               <div className="w-10 h-1 bg-primary-cyan rounded-full" />
-               <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-text-muted">UI Designer & CEO</p>
+               <div className="w-10 h-0.5 bg-primary-cyan rounded-full" />
+               <p className="text-[10px] font-poppins font-bold uppercase tracking-[0.2em] text-text-muted">UI Designer & CEO</p>
              </div>
 
-             <p className="text-text-muted text-lg leading-relaxed mb-10 max-w-xl">
+             <p className="text-text-muted font-poppins font-medium text-lg leading-relaxed mb-10 max-w-xl">
                Driven by a passion for nature-inspired design and advanced data science, I lead our team in bridging the gap between complex engineering and intuitive user experiences. With a foundation in full-stack development and AI, my mission is to build scalable SaaS solutions.
              </p>
 
-             <p className="font-bold text-white mb-6 uppercase tracking-widest text-xs">Join me on social media</p>
+             <p className="font-poppins font-bold text-white mb-6 uppercase tracking-widest text-[10px]">Join me on social media</p>
              
              <div className="flex gap-6">
                <a href="#" title="WhatsApp" className="hover:scale-110 transition-transform text-text-muted hover:text-primary-cyan"><MessageCircle className="w-6 h-6" /></a>

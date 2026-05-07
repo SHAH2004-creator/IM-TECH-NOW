@@ -25,7 +25,7 @@ export default function Footer() {
           <div className="grid grid-cols-2 md:grid-cols-2 gap-12">
             <div>
               <h4 className="text-lg font-bold mb-6">Navigation</h4>
-              <ul className="space-y-4 text-text-muted">
+              <ul className="space-y-4 text-text-muted font-poppins text-sm">
                 <li><a href="#" className="no-underline transition-all hover:text-primary-cyan hover:underline hover:underline-offset-4">Home</a></li>
                 <li><a href="#" className="no-underline transition-all hover:text-primary-cyan hover:underline hover:underline-offset-4">About Us</a></li>
                 <li><a href="#" className="no-underline transition-all hover:text-primary-cyan hover:underline hover:underline-offset-4">Our Portfolio</a></li>
@@ -67,9 +67,9 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="pt-8 flex flex-col xl:flex-row justify-between items-center xl:items-start gap-8">
+        <div className="pt-8 flex flex-col xl:flex-row justify-between items-center xl:items-center gap-8 border-t border-dark-border/50">
           <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8 min-w-fit">
-            <p className="text-sm text-text-muted whitespace-nowrap">
+            <p className="text-sm text-text-light whitespace-nowrap font-poppins">
               Copyright © {currentYear} ImTechNow | All Rights Reserved.
             </p>
             <div className="flex gap-4 text-sm text-text-muted">
@@ -79,25 +79,27 @@ export default function Footer() {
             </div>
           </div>
           
-          <div className="flex flex-wrap gap-2 justify-center xl:justify-end xl:max-w-xl">
-             {[
-               ["Mobile App Development", "Website Development", "SaaS Products"],
-               ["UI/UX Design", "Graphic Design", "Poster Design"]
-             ].map((group, groupIdx) => (
-               <div key={groupIdx} className="flex flex-wrap gap-2 justify-center xl:justify-end">
-                 {group.map(tag => (
-                   <span key={tag} className="px-3 py-1 border border-dark-border rounded-full text-[10px] text-text-muted whitespace-nowrap hover:border-primary-cyan transition-colors">
-                     {tag}
-                   </span>
-                 ))}
-               </div>
-             ))}
+          <div className="flex flex-col xl:items-end gap-3">
+             <div className="flex flex-wrap gap-2 justify-center xl:justify-end">
+               {["Mobile App Development", "Website Development", "SaaS Products"].map(tag => (
+                 <span key={tag} className="px-3 py-1 border border-dark-border rounded-full text-[10px] text-text-muted whitespace-nowrap hover:border-primary-cyan transition-colors font-poppins">
+                   {tag}
+                 </span>
+               ))}
+             </div>
+             <div className="flex flex-wrap gap-2 justify-center xl:justify-end">
+               {["UI/UX Design", "Graphic Design", "Poster Design"].map(tag => (
+                 <span key={tag} className="px-3 py-1 border border-dark-border rounded-full text-[10px] text-text-muted whitespace-nowrap hover:border-primary-cyan transition-colors font-poppins">
+                   {tag}
+                 </span>
+               ))}
+             </div>
           </div>
         </div>
         
         {/* Large background text footer */}
         <div className="mt-20 opacity-[0.03] select-none">
-          <h2 className="text-[15vw] font-bold text-center leading-none tracking-tighter">IMTECHNOW</h2>
+          <h2 className="text-[15vw] font-heading font-black text-center leading-none tracking-tighter">IMTECHNOW</h2>
         </div>
       </div>
     </footer>
