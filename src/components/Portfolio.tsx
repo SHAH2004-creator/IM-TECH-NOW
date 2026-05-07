@@ -47,13 +47,13 @@ export default function Portfolio() {
                     whileHover={{ y: -10 }}
                     className="rounded-2xl overflow-hidden aspect-[3/4] border border-dark-border"
                   >
-                    <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&q=80&w=600" alt="poster 1" className="w-full h-full object-cover" />
+                    <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=600" alt="poster 1" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
                   </motion.div>
                   <motion.div 
                     whileHover={{ y: -10 }}
                     className="rounded-2xl overflow-hidden aspect-[3/4] border border-dark-border"
                   >
-                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=600" alt="poster 2" className="w-full h-full object-cover" />
+                    <img src="https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?auto=format&fit=crop&q=80&w=600" alt="poster 2" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
                   </motion.div>
                 </div>
             </div>
@@ -75,13 +75,13 @@ export default function Portfolio() {
                     whileHover={{ y: -10 }}
                     className="rounded-2xl overflow-hidden aspect-[3/4] border border-dark-border"
                   >
-                    <img src="https://images.unsplash.com/photo-1626806819282-2c1dc01a5e0c?auto=format&fit=crop&q=80&w=600" alt="dua 1" className="w-full h-full object-cover" />
+                    <img src="https://images.unsplash.com/photo-1591154112530-6fe84caaf746?auto=format&fit=crop&q=80&w=600" alt="dua 1" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
                   </motion.div>
                   <motion.div 
                     whileHover={{ y: -10 }}
                     className="rounded-2xl overflow-hidden aspect-[3/4] border border-dark-border"
                   >
-                    <img src="https://images.unsplash.com/photo-1626806819102-3652d3a3d3a?auto=format&fit=crop&q=80&w=600" alt="dua 2" className="w-full h-full object-cover" />
+                    <img src="https://images.unsplash.com/photo-1589111075608-ce798939e6a0?auto=format&fit=crop&q=80&w=600" alt="dua 2" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
                   </motion.div>
                 </div>
               </div>
@@ -111,6 +111,7 @@ export default function Portfolio() {
                 src="https://images.unsplash.com/photo-1551288049-bbbda536339a?auto=format&fit=crop&q=80&w=1200" 
                 alt="UI Portfolio" 
                 className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                referrerPolicy="no-referrer"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-dark-navy/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-12">
                 <div>

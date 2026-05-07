@@ -113,21 +113,21 @@ export default function Services() {
                 </div>
 
                 {/* Bottom Half: Content */}
-                <div className="flex-1 p-8 bg-white flex flex-col">
-                  <h3 className="text-2xl font-heading font-bold text-[#101820] mb-3 group-hover:text-primary-cyan transition-colors">{service.title}</h3>
-                  <p className="text-gray-600 mb-8 leading-relaxed text-sm font-poppins">
+                <div className="flex-1 p-8 bg-dark-card flex flex-col">
+                  <h3 className="text-2xl font-heading font-bold text-white mb-3 group-hover:text-primary-cyan transition-colors">{service.title}</h3>
+                  <p className="text-text-muted mb-8 leading-relaxed text-sm font-poppins">
                     {service.description}
                   </p>
                   
                   <div className="flex flex-wrap gap-2 mb-8 mt-auto">
                     {service.tags.map(tag => (
-                      <span key={tag} className="px-3 py-1 border border-primary-cyan text-[9px] uppercase font-bold text-primary-cyan tracking-wider rounded-md">
+                      <span key={tag} className="px-3 py-1 border border-primary-cyan/30 text-[9px] uppercase font-bold text-primary-cyan tracking-wider rounded-md">
                         {tag}
                       </span>
                     ))}
                   </div>
 
-                  <button className="flex items-center gap-2 text-[#101820] font-bold uppercase tracking-widest text-[11px] group/btn w-fit">
+                  <button className="flex items-center gap-2 text-white font-bold uppercase tracking-widest text-[11px] group/btn w-fit">
                     <span className="relative">
                       Let's Visit
                       <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-cyan transition-all group-hover/btn:w-full" />

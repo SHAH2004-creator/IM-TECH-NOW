@@ -14,13 +14,10 @@ export default function Founder() {
           >
             <div className="relative z-10 rounded-2xl overflow-hidden aspect-[4/5] max-w-md mx-auto shadow-2xl border border-dark-border">
               <img 
-                src="https://framerusercontent.com/images/Usman.jpg" 
+                src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=800" 
                 alt="Usman Haider"
-                className="w-full h-full object-cover grayscale"
-                onError={(e) => {
-                    const target = e.target as HTMLImageElement;
-                    target.src = "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=800";
-                }}
+                className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                referrerPolicy="no-referrer"
               />
               <div className="absolute inset-0 border-[12px] border-primary-cyan/10 pointer-events-none" />
             </div>
@@ -36,12 +33,17 @@ export default function Founder() {
              
              <div className="flex items-center gap-3 mb-8">
                <div className="w-10 h-0.5 bg-primary-cyan rounded-full" />
-               <p className="text-[10px] font-poppins font-bold uppercase tracking-[0.2em] text-text-muted">UI Designer & CEO</p>
+               <p className="text-[10px] font-poppins font-bold uppercase tracking-[0.2em] text-text-muted">Creative Lead & CEO</p>
              </div>
 
-             <p className="text-text-muted font-poppins font-medium text-lg leading-relaxed mb-10 max-w-xl">
-               Driven by a passion for nature-inspired design and advanced data science, I lead our team in bridging the gap between complex engineering and intuitive user experiences. With a foundation in full-stack development and AI, my mission is to build scalable SaaS solutions.
-             </p>
+             <div className="mb-10">
+                <p className="text-white font-heading text-2xl md:text-3xl font-black italic leading-tight mb-6">
+                  "WE ARE HERE TO SERVE THE SOCIETY THROUGH OUR <span className="text-primary-cyan underline decoration-2 underline-offset-8">DIGITAL EXPERTISE.</span>"
+                </p>
+                <p className="text-text-muted font-poppins font-medium text-lg leading-relaxed max-w-xl">
+                  Driven by a passion for nature-inspired design and advanced data science, I lead our team in bridging the gap between complex engineering and intuitive user experiences.
+                </p>
+             </div>
 
              <p className="font-poppins font-bold text-white mb-6 uppercase tracking-widest text-[10px]">Join me on social media</p>
              

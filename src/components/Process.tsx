@@ -30,34 +30,30 @@ const steps = [
 
 export default function Process() {
   return (
-    <section id="process" className="py-24 px-6">
+    <section id="process" className="py-24 px-6 bg-dark-navy">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-20">
+        <div className="text-left mb-20">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             className="inline-flex items-center gap-2 mb-4"
           >
-            <div className="h-px w-8 bg-neon-cyan" />
-            <span className="text-neon-cyan font-mono text-xs tracking-widest uppercase">Workflow</span>
-            <div className="h-px w-8 bg-neon-cyan" />
+            <div className="h-px w-8 bg-primary-cyan" />
+            <span className="text-primary-cyan font-mono text-xs tracking-widest uppercase">Workflow</span>
           </motion.div>
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-4xl md:text-5xl font-bold italic"
+            className="text-4xl md:text-5xl font-heading font-black tracking-tighter text-white"
           >
-            Our Mission <span className="text-neon-cyan">Protocol</span>
+            Our Mission <span className="text-primary-cyan">Protocol</span>
           </motion.h2>
         </div>
 
         <div className="relative">
-          {/* Connector line */}
-          <div className="absolute top-1/2 left-0 w-full h-px bg-dark-border hidden lg:block -translate-y-1/2" />
-          
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {steps.map((step, index) => (
               <motion.div
@@ -68,17 +64,17 @@ export default function Process() {
                 transition={{ delay: index * 0.1 }}
                 className="relative group"
               >
-                <div className="bg-dark-surface border border-dark-border rounded-3xl p-8 h-full hover:border-neon-cyan transition-all duration-500 text-center relative z-10 group-hover:-translate-y-4">
-                  <div className={`w-16 h-16 rounded-2xl bg-dark-bg border border-dark-border flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform group-hover:text-neon-cyan`}>
-                    {step.icon}
+                <div className="bg-dark-card border border-dark-border rounded-3xl p-8 h-full hover:border-primary-cyan transition-all duration-500 text-left relative z-10 group-hover:-translate-y-4">
+                  <div className={`w-16 h-16 rounded-2xl bg-dark-navy border border-dark-border flex items-center justify-center mb-6 group-hover:scale-110 transition-transform group-hover:text-primary-cyan`}>
+                    <step.icon.type className="w-6 h-6 text-primary-cyan" />
                   </div>
-                  <h3 className="text-xl font-bold mb-4">{step.title}</h3>
-                  <p className="text-gray-500 text-sm leading-relaxed">
+                  <h3 className="text-xl font-bold mb-4 text-white font-heading tracking-tight">{step.title}</h3>
+                  <p className="text-text-muted text-sm leading-relaxed font-poppins font-medium">
                     {step.description}
                   </p>
                   
                   {/* Step number */}
-                  <div className="absolute top-4 left-4 text-[40px] font-bold text-white/5 font-mono select-none">
+                  <div className="absolute top-4 right-4 text-[40px] font-bold text-white/5 font-mono select-none">
                     0{index + 1}
                   </div>
                 </div>

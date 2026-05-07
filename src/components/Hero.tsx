@@ -68,9 +68,10 @@ export default function Hero() {
           >
             <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-dark-border bg-dark-card group">
               <img 
-                src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&q=80&w=2000" 
+                src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=2000" 
                 alt="Modern Tech Desk"
                 className="w-full h-auto grayscale transition-all duration-700 group-hover:grayscale-0"
+                referrerPolicy="no-referrer"
               />
               
               <div className="absolute top-8 right-8 bg-dark-navy/90 backdrop-blur-md p-6 rounded-xl border border-dark-border shadow-2xl max-w-[200px]">

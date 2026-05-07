@@ -2,6 +2,7 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Stats from './components/Stats';
 import Services from './components/Services';
+import Process from './components/Process';
 import Founder from './components/Founder';
 import Team from './components/Team';
 import Portfolio from './components/Portfolio';
@@ -17,6 +18,7 @@ export default function App() {
         <Hero />
         <Stats />
         <Services />
+        <Process />
         <Founder />
         <Team />
         <Portfolio />

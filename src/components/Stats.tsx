@@ -9,8 +9,9 @@ export default function Stats() {
   ];
 
   return (
-    <section className="bg-[#00D4FF]/30 py-16 px-6 border-y border-dark-border backdrop-blur-sm">
-      <div className="max-w-7xl mx-auto">
+    <section className="bg-dark-navy py-16 px-6 border-y border-dark-border relative overflow-hidden">
+      <div className="absolute inset-0 bg-[#00D4FF]/5 pointer-events-none" />
+      <div className="max-w-7xl mx-auto relative z-10">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-12 text-center">
           {stats.map((stat, i) => (
             <motion.div
